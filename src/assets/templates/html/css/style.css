@@ -1,0 +1,735 @@
+/* Definition of all the components */
+#ui-datepicker-div {
+	font-size: 10px;
+	z-index:2000;
+}
+
+.napkeeAlertBox {
+	background: #0B1B43 url(../images/iphone/alertBoxBackground.png) repeat-x;
+	border:2px solid #FFF;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+
+.napkeeAlertBox h3 {
+	margin-top:5px;
+	margin-bottom:5px;
+	font-size:18px;
+	text-align:center;
+	color:#FFFFFF;
+}
+
+.napkeeAlertBox h5 {
+	margin-top:5px;
+	color:#FFFFFF;
+	margin-bottom:5px;
+	font-size:13px;
+	text-align:center;
+}
+.napkeeAlertBox div {
+	text-align:center;
+}
+.napkeeAlertBox button {
+	border:1px solid #84888E;
+	background: #84888E url(../images/iphone/alertBoxButtonBackground.png) repeat-x;
+	margin:5px;
+	height:40px;
+	font-size:14px;
+	font-weight:bold;
+	color:#FFFFFF;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+.napkeeAccordion {
+}
+
+.napkeeAccordionSpec{
+	border:1px solid #000;
+	font-size:11px;
+	white-space: normal;
+}
+
+.napkeeAccordionSpecSelected {
+	background-color:#91F6B9;
+}
+
+.napkeeAccordionSpec h3 {
+	margin:0;
+	height:28px;
+	line-height:28px;
+	border-bottom:1px solid #000;
+	cursor:pointer;
+}
+
+.napkeeAccordionSpec h3 span{
+	padding-left:4px;
+}
+
+
+.napkeeAccordionSpec h5 {
+	margin:0;
+	font-size:13px;
+	height:25px;
+	line-height:25px;
+	cursor:pointer;
+}
+
+.napkeeAccordionSpec h5 span {
+	padding-left:10px;
+}
+
+.napkeeAccordionSpec div {
+	border-bottom:1px solid #000;
+}
+
+.napkeeArrow {
+}
+
+.napkeeArrowTable {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+.napkeeArrowLabel {
+}
+
+
+.napkeeBarchar {
+}
+
+.napkeeBreadcrumbs {
+}
+
+.napkeeButton {
+}
+
+.napkeeButtonbar {
+	margin:0;
+	margin-top:2px;
+	padding:0;
+}
+
+.napkeeButtonbar li {
+	float: left;
+	list-style-type: none;
+	text-align:center;
+	margin-right:2px;
+	padding-right: 11px;
+	padding-left: 11px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border:1px solid #000;
+	background-color:#EEEEEE;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.napkeeButtonbar li a{
+	color:#000000;
+}
+
+.napkeeButtonbar li.napkeeButtonbarSelected {
+	background-color:#91F6B9;
+}
+
+
+
+.napkeeCalendar {
+}
+
+.napkeeCallout {
+	border:2px solid #333333;
+	-moz-border-radius: 17px;
+	-webkit-border-radius: 17px;
+	border-radius: 17px;
+	text-align:left;
+	white-space: normal;
+	word-wrap: break-word;
+	padding:10px;
+}
+
+.napkeeCanvas {
+}
+
+.napkeeCheckbox {
+}
+
+.napkeeCheckboxGroup {
+}
+
+.napkeeColorpicker {
+}
+
+.napkeeColumnchart {
+}
+
+.napkeeCombobox {
+}
+
+.napkeeCoverflow {
+}
+
+.napkeeDatagrid {
+}
+
+.napkeeDatechooser {
+}
+
+.napkeeFieldset {
+}
+
+.napkeeFormattingToolbar {
+	height:28px;
+	background-color:#FFFFFF;
+}
+
+.napkeeFormattingToolbarImage {
+	width:16px;
+	height:16px;
+}
+
+.napkeeFormattingToolbarSelect {
+	margin-left:5px;
+	margin-right:5px;
+	width:100px;
+	font-size:10px;
+}
+
+.napkeeHCurly {
+}
+
+.napkeeHCurlyText {
+	text-align:center;
+}
+
+.napkeeHCurlyVisible {
+}
+
+.napkeeHCurlyInvisible {
+	height:1px;
+}
+
+.napkeeVCurly {
+}
+
+.napkeeVCurlyText {
+	text-align:center;
+	vertical-align: middle; 
+}
+
+.napkeeHCurlyVisible {
+}
+
+.napkeeHCurlyInvisible {
+	width:1px;
+}
+
+.napkeeHorizontalScrollArrowLeft {
+	cursor:pointer;
+	width:14px;
+	height:14px;
+	border:1px solid #000;
+	border-right:0px;
+}
+.napkeeHorizontalScrollArrowRight {
+	cursor:pointer;
+	width:14px;
+	height:14px;
+	border:1px solid #000;
+	border-left:0px;
+}
+.napkeeHorizontalScrollBar {
+	height:14px;
+	border:1px solid #000;
+}
+.napkeeHorizontalScrollHandle {
+	cursor:pointer;
+	margin-top:1px;
+	margin-left:1px;
+	width: 24px;
+	height: 12px;
+	background-color:#333333;
+}
+
+.napkeeHRule {
+}
+
+.napkeeHSlider {
+}
+
+.napkeeHsplitter {
+	width:10px;
+	border-left:1px solid #000000;
+	border-right:1px solid #000000;
+}
+
+.napkeeIcon {
+}
+
+.napkeeIconlabel {
+	border:0px;
+}
+
+.napkeeImage {
+}
+
+.napkeeImageLabel {
+	opacity:0.7;
+	filter:alpha(opacity=70);
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	padding:2px;
+	background-color:#FFF;
+}
+
+.napkeeIphone {
+}
+
+.napkeeIphoneKeyboard {
+}
+
+.napkeeIPhoneMenu {
+	border:1px solid #CCCCCC;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+	
+.napkeeIPhoneMenu table {
+	height:28px;
+	width:100%;
+	border-bottom:1px solid #BBBBBB;
+}
+
+.napkeeIPhoneMenu table.lastTable {
+	border-bottom:0px;
+}
+
+.napkeeIPhoneMenu table td.emptyRow {
+}
+
+.napkeeIPhoneMenu table td.menuIcon {
+	width:20px;
+}
+
+.napkeeIPhoneMenu table td.menuBigIcon {
+	width:48px;
+	height:48px;
+}
+
+.napkeeIPhoneMenu table td.rowDesc {
+	width:20px;
+	font-size:11px;
+	color:#4F5B75;
+}
+
+.napkeeIPhoneMenu table td.menuSwitch {
+	width:20px;
+}
+
+.napkeeIphonePicker {
+	background: #333 url(../images/iphone/pickerBackground.png) repeat-x;
+	width:232px;
+	height:160px;
+}
+
+.napkeeIphonePicker table {
+	background: #FFF url(../images/iphone/pickerDataBackground.png) repeat-x;
+	margin-top:10px;
+	height:140px;
+}
+
+.napkeeIphonePicker table td {
+	height:28px;
+	text-align:center;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.napkeeIphonePicker table tr.selected {
+	background: #EEE url(../images/iphone/pickerSelectedRow.png) repeat-x;
+}
+
+.napkeeLabel {
+	white-space:normal;
+}
+
+.napkeeLabelUp {
+	-webkit-transform: rotate(-90deg); 
+	-moz-transform: rotate(-90deg);
+	-o-transform:rotate(-90deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);	
+}
+
+.napkeeLabelDown {
+	-webkit-transform: rotate(90deg); 
+	-moz-transform: rotate(90deg);
+	-o-transform:rotate(90deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);	
+}
+
+.napkeeLabelSlanted {
+	-webkit-transform: rotate(-15deg); 
+	-moz-transform: rotate(-15deg);
+	-o-transform:rotate(-15deg);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.96592583, M12=0.25881905, M21=-0.25881905, M22=0.96592583,sizingMethod='auto expand')";
+	filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.96592583, M12=0.25881905, M21=-0.25881905, M22=0.96592583,sizingMethod='auto expand');	
+}
+
+.napkeeLinechart {
+}
+
+.napkeeLink {
+}
+
+.napkeeLinkbar {
+	margin:0;
+	padding:0;
+}
+
+.napkeeLinkbar li {
+	display: inline;
+	list-style-type: none;
+	padding-right: 11px;
+	padding-left: 11px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.napkeeLinkbar li.linkbarBorder {
+	border-right:1px solid #000;
+}
+.napkeeLinkbar li.linkbarStart {
+	padding-left: 0px;
+}
+.napkeeLinkbar li.linkbarEnd {
+	padding-right: 0px;
+}
+
+.napkeeList {
+}
+
+.napkeeMap {
+	border:1px solid #FFFFFF;
+}
+
+.napkeeMenubar {
+}
+
+.napkeeMenu {
+}
+
+.napkeeModalscreen {
+}
+
+.napkeeMultilineButton.napkee {
+	border:1px solid #000000;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	text-align:center;
+}
+
+.napkeeMultilineButton h3 {
+	margin-top:5px;
+	margin-bottom:5px;
+	font-size:16px;
+	text-align:center;
+}
+
+.napkeeMultilineButton h5 {
+	margin-top:5px;
+	margin-bottom:5px;
+	font-size:12px;
+	font-weight:normal;
+	text-align:center;
+}
+
+.napkeeNumericstepper {
+}
+
+.napkeeParagraph {
+}
+
+.napkeeParagraph li {
+	margin-left:2em;
+}
+
+.napkeePiechart {
+}
+
+.napkeePointyButton {
+	cursor:pointer;
+}
+
+.napkeeProgressbar {
+}
+
+.napkeeRadiobutton {
+}
+
+.napkeeRadiobuttonGroup {
+}
+
+.napkeeRoundbutton {
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+}
+
+.napkeeSearchbox {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	outline: none;
+	border:1px solid #000;
+	padding-left:20px;
+	background-repeat: no-repeat;
+	background-position: 2px 50%;
+}
+
+.napkeeShape {
+}
+
+.napkeeShapeTable {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+.napkeeShapeLabel {
+}
+
+
+.napkeeStickynote {
+	text-align:left;
+	border:0px solid;
+	white-space:normal;
+	white-space: normal;
+	word-wrap: break-word;
+	padding:10px;
+}
+
+.napkeeTabbar {
+}
+
+.napkeeTagcloud {
+}
+
+.napkeeTextarea {
+}
+
+.napkeeTextinput {
+}
+
+.napkeeSubTitle {
+}
+
+.napkeeTitle {
+}
+
+.napkeeTitlewindow {
+}
+
+.napkeeTooltip {
+}
+
+.napkeeTree {
+}
+
+.napkeeUnsupported {
+	text-align:center;
+	background-color:#FCF8E3;
+	border:0px solid;
+	white-space:normal!important;
+	padding-top:10px;
+	color:#C09853;
+}
+
+.napkeeVerticalScrollArrowUp {
+	cursor:pointer;
+	width:14px;
+	height:14px;
+	border:1px solid #000;
+	border-bottom:0px;
+	padding-left:3px;
+	width:11px;
+}
+.napkeeVerticalScrollArrowDown {
+	cursor:pointer;
+	width:14px;
+	height:14px;
+	border:1px solid #000;
+	border-top:0px;
+	padding-left:3px;
+	width:11px;
+}
+.napkeeVerticalScrollBar {
+	width:14px;
+	border:1px solid #000;
+}
+.napkeeVerticalScrollHandle {
+	cursor:pointer;
+	margin-top:1px;
+	margin-left:1px;
+	width: 12px;
+	height: 24px;
+	background-color:#333333;
+}
+
+.napkeeVerticaltabbar {
+}
+
+.napkeeVideoplayer {
+}
+
+.napkeeVolumeslider {
+}
+
+.napkeeVrule {
+}
+
+.napkeeVslider {
+}
+
+.napkeeVsplitter {
+	height:10px;
+	border-top:1px solid #000000;
+	border-bottom:1px solid #000000;
+}
+
+.napkeeWebcam {
+}
+
+
+UL.napkeeHorizontalTabs {
+    list-style: none;
+    padding: 0;
+	margin-left:10px;
+	margin-right:10px;
+}
+
+UL.napkeeHorizontalTabsTop {
+	margin-top: 0px;
+	margin-bottom:-3px;
+}
+
+UL.napkeeHorizontalTabsBottom {
+	margin-top: -3px;
+	margin-bottom:0px;
+}
+
+
+UL.napkeeVerticalTabs {
+    list-style: none;
+    margin: 0;
+	margin-top:15px;
+    padding: 0;
+}
+
+UL.napkeeVerticalTabsRight {
+	margin-left:-1px;
+}
+
+UL.napkeeVerticalTabsLeft {
+	margin-right:-1px;
+}
+
+UL.napkeeVerticalTabs LI {
+  	border: 1px solid #333;
+	margin-bottom:4px;
+	height:25px;
+	line-height:25px;
+	background-color:#DDD;
+}
+
+UL.napkeeHorizontalTabs LI {
+	display: inline;
+	border: 1px solid #333;
+	height:25px;
+	line-height:25px;
+	background-color:#DDD;
+}
+
+UL.napkeeVerticalTabsRight LI.selected {
+	border-left: 1px solid #FFF;
+	background-color:#FFF;
+}
+
+UL.napkeeVerticalTabsLeft LI.selected {
+	border-right: 2px solid #FFF;
+	background-color:#FFF;
+}
+
+UL.napkeeHorizontalTabsTop LI {
+	border-bottom: 0px;
+}
+
+UL.napkeeHorizontalTabsTop LI.selected {
+	border-bottom: 2px solid #FFF;
+	background-color:#FFF;
+}
+
+UL.napkeeHorizontalTabsBottom LI.selected {
+	border-top: 1px solid #FFF;
+	background-color:#FFF;
+}
+
+UL.napkeeTabs LI:hover {
+	background-color:#CCC;
+}
+
+
+UL.napkeeTabs LI A {
+    padding: 0px 5px;
+    color: #000;
+    text-decoration: none;
+}
+
+
+UL.napkeeTabs LI A:focus {
+    outline: 0;
+}
+div.napkeeTabsDivs > div {
+	overflow: hidden;
+    padding: 5px;
+    margin-top: 0;
+    border: 1px solid #333;
+}
+
+div.napkeeTabsDivs > div h2 {
+    margin-top: 0;
+}
+
+
+
+.disabledText {
+	color: #BBB;
+}
+
+.hand {
+	cursor: pointer;
+}
+
+.rotate90 {
+	-webkit-transform: rotate(90deg); 
+	-moz-transform: rotate(90deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);	
+}
+.rotate180 {
+	-webkit-transform: rotate(180deg); 
+	-moz-transform: rotate(180deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);	
+}
+.rotate270 {
+	-webkit-transform: rotate(270deg); 
+	-moz-transform: rotate(270deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);	
+}
+.rotate360 {
+}
+

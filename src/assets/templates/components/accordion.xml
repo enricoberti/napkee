@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div class="napkeeComponent napkeeAccordion accordion" id="${id}">
+	${code}  
+</div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	width:${width};
+	height:${height};
+	z-index:${z};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+${clickCode}
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

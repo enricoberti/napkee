@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="620" height="416" title="Napkee preferences" showCloseButton="true" 
+                creationComplete="init()">
+
+	<mx:Script>
+		<![CDATA[
+            import com.napkee.managers.ApplicationManager;
+            import com.napkee.managers.UIManager;
+            import com.napkee.vo.BMMLFile;
+            
+            import mx.core.FlexGlobals;
+            import mx.events.CloseEvent;
+            import mx.events.ListEvent;
+			
+			[Bindable] private var prefix:String = "";
+			[Bindable] private var checkForUpdates:Boolean;
+			[Bindable] private var openExport:Boolean;
+			[Bindable] private var skipMarkupComponents:Boolean;
+			[Bindable] private var pageTitle:String = "";
+			[Bindable] private var iconsFolder:String = "";
+			[Bindable] private var additionalFolder:String = "";
+			[Bindable] private var mapLocation:String = "";
+			[Bindable] private var customCode:String = "";
+			[Bindable] private var applyBrowserOffset:Boolean;
+			
+			private var selectedFolder:File = new File();
+			private var fileFilter:FileFilter = new FileFilter("CSS files", "*.css;");
+
+			
+			public function init():void {
+				prefix = ApplicationManager.getPrefix();
+                
+				checkForUpdates = ApplicationManager.isCheckForUpdates();
+				openExport = ApplicationManager.isOpenExport();
+				skipMarkupComponents = ApplicationManager.isSkipMarkup();
+				pageTitle = ApplicationManager.getHTMLTitle();
+				additionalFolder = ApplicationManager.getAdditionalFolder();
+				customCode = ApplicationManager.getHTMLCustomCode();
+				mapLocation = ApplicationManager.getMapLocation();
+				applyBrowserOffset = ApplicationManager.isBrowserOffsetApplied();
+			}
+            
+			private function browseForAdditionalFolder():void {
+				try {
+					selectedFolder.browseForDirectory("Choose a directory");
+   					selectedFolder.addEventListener(Event.SELECT, onFolderSelected);
+				}
+				catch (error:Error)  {
+					trace("Failed:", error.message);
+				}
+			}
+			
+			private function onFolderSelected(evt:Event):void {
+  				additionalFolderInput.text = evt.target.nativePath;
+			}
+			
+			private function returnToNapkee():void {
+				this.dispatchEvent(new Event(CloseEvent.CLOSE));	
+			}
+			
+			private function save():void {
+				ApplicationManager.setPrefix(componentPrefix.text);
+				ApplicationManager.setOpenExport(openExported.selected);
+				ApplicationManager.setSkipMarkup(skipMarkup.selected);
+				ApplicationManager.setCheckForUpdates(autoUpdateCheck.selected);
+                
+				ApplicationManager.setHTMLTitle(htmlTitle.text);
+				ApplicationManager.setAdditionalFolder(additionalFolderInput.text);
+				ApplicationManager.setHTMLCustomCode(htmlCustom.text);
+				ApplicationManager.setMapLocation(map.text);
+				ApplicationManager.setBrowserOffsetApplied(applyBrowserOff.selected);
+				
+				// refresh the current mockup
+				if (FlexGlobals.topLevelApplication.fileList.selectedIndex > -1){
+					var selectedFile:BMMLFile = FlexGlobals.topLevelApplication.fileList.selectedItem as BMMLFile;
+					UIManager.showParsedFile(selectedFile.file);
+				}
+					
+				returnToNapkee();
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:TextArea width="100%" borderStyle="none" editable="false" text="In this window you can customize some aspects of Napkee. Just choose a property on the tab navigator to see how you can change it." height="42"/>
+	
+	<mx:TabNavigator width="100%" height="100%" creationPolicy="all">
+		<mx:Canvas label="Export settings" width="100%" height="100%">
+			<mx:HBox x="114.5" y="30" horizontalAlign="center" verticalAlign="middle">
+				<mx:Label text="Components prefix"/>
+				<mx:TextInput id="componentPrefix" text="{prefix}"/>
+			</mx:HBox>
+			<mx:Label text="i.e. &lt;input id=&quot;{componentPrefix.text}123 ..." fontStyle="italic" fontSize="9" x="233.5" y="53"/>
+			
+			
+			<mx:CheckBox id="openExported" x="137.5" y="116" label="Open the exported file or folder after the export" selected="{openExport}"/>
+			<mx:CheckBox id="skipMarkup" x="137.5" y="146" label="Skip Markup components" selected="{skipMarkupComponents}"/>
+			<mx:HBox horizontalAlign="center" verticalAlign="middle" x="105.5" y="75">
+				<mx:Label text="Default map location"/>
+				<mx:TextInput id="map" text="{mapLocation}" width="296"/>
+			</mx:HBox>
+		</mx:Canvas>
+		<mx:Canvas label="HTML settings" width="100%" height="100%">
+			<mx:HBox x="133.5" y="29" horizontalAlign="center" verticalAlign="middle">
+				<mx:Label text="HTML page title"/>
+				<mx:TextInput id="htmlTitle" text="{pageTitle}" width="296"/>
+			</mx:HBox>
+			<mx:HBox horizontalAlign="center" verticalAlign="middle" x="77.5" y="60">
+				<mx:Label text="Additional folder to include"/>
+				<mx:TextInput id="additionalFolderInput" text="{additionalFolder}" width="220" />
+				<mx:Button label="Browse" click="browseForAdditionalFolder()"/>
+				<mx:Text fontWeight="bold" text="*"/>
+			</mx:HBox>
+			<mx:Text x="137" y="219" text="* Please restart Napkee after changing these settings." fontWeight="bold"/>
+			<mx:HBox horizontalAlign="center" verticalAlign="top" x="94" y="86">
+				<mx:Label text="Custom code to include"/>
+				<mx:TextArea id="htmlCustom" y="6" width="296" height="82" text="{customCode}"/>
+			</mx:HBox>
+			<mx:CheckBox id="applyBrowserOff" x="238.5" y="171" label="Include Browser Window parsing" selected="{applyBrowserOffset}"/>
+		</mx:Canvas>
+		<mx:Canvas label="Software Updates" width="100%" height="100%">
+			<mx:CheckBox  x="177.5" y="51" id="autoUpdateCheck" label="Automatically check for updates at launch" selected="{checkForUpdates}"/>
+		</mx:Canvas>
+		<mx:Canvas label="Webcam" width="100%" height="100%">
+			<mx:HBox left="5" top="5" bottom="5" right="5" verticalAlign="middle">
+				<mx:HTML location="http://www.napkee.com/components/NapkeeHostedCam" width="320" height="240" />
+				<mx:Text htmlText="The first time you see the Flash Settings dialog click on &lt;b&gt;Allow&lt;/b&gt;. Then right click on your image, select Settings. From the Privacy tab check &lt;b&gt;Remember&lt;/b&gt; and click on &lt;b&gt;Close&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;If you already see your webcam image you are set and ready to go!" width="100%" height="100%" />
+			</mx:HBox>
+		</mx:Canvas>
+	</mx:TabNavigator>
+	
+
+	<mx:ControlBar height="45">
+		<mx:Spacer width="100%" />
+		<mx:Button id="activateButton" label="Save" click="save()"/>
+		<mx:Button label="Cancel" click="returnToNapkee()"/>
+	</mx:ControlBar>
+	
+</mx:TitleWindow>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}" class="input-append date napkeeComponent napkeeDatechooser" data-date="${value}">
+	<input id="${id}dp" type="text" disabled="${disabled}" value="${value}">
+	<span class="add-on"><i class="icon-calendar"></i></span>
+ </div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	z-index:${z};
+}
+#${id}dp{
+	width:${width};
+	z-index:${z};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+$('#${id}').datepicker();
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

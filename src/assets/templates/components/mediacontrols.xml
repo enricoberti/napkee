@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}" class="napkeeComponent napkeeMediacontrols">
+	<table width="100">
+		<tr>
+			<td width="34" align="left">
+				<button class="btn"><i class="icon-backward"></i></button>
+			</td>
+			<td width="32" align="center">
+				<button class="btn"><i id="${id}PlayButton" class="icon-play-sign"></i></button>
+			</td>
+			<td width="34" align="right">
+				<button class="btn"><i id="${id}EndButton" class="icon-forward"></i></button>
+			</td>
+		</tr>
+	</table>
+</div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	width:${width};
+	height:${height};
+	z-index:${z};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+	]]>
+	</jsdocready>
+	<jsimport>
+		<jsfile>jquery</jsfile>
+		<jsfile>jquery-ui</jsfile>
+	</jsimport>
+	<cssimport>
+		<cssfile>jquery-ui</cssfile>
+	</cssimport>
+</component>

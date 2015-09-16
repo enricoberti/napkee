@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="418" height="86" title="Project export" showCloseButton="false" initialize="initWin()" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+
+	<mx:Script>
+		<![CDATA[
+		
+			private var counter:Number = 0;
+		
+			private function initWin():void
+			{
+				addEventListener("PROGRESS", progressHandler);
+			}
+		
+			private function progressHandler(event:Event):void
+			{
+				counter++;
+				exportProgress.setProgress(counter,exportProgress.maximum);
+				validateNow();
+			}
+			
+			public function resetCounter():void
+			{
+				counter = 0;
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:Label id="ca" y="12" x="44">
+		<mx:text>Export in progress... Please wait, it might take a while!</mx:text>
+	</mx:Label>
+	<mx:ProgressBar label="" width="452" height="27" y="51" id="exportProgress" mode="manual" trackHeight="20" x="3"/>
+
+	
+</mx:TitleWindow>

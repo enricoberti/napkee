@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<ul id="${id}" class="napkeeComponent napkeeTagcloud">
+	${code}
+</ul>	
+
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	width:${width};
+	height:${height};
+	z-index:${z};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+		var aLi = $("#${id}>li");
+		var iLi = aLi.length;
+		$.each(aLi,function(i,o){
+			$(o).val(Math.round(iLi*Math.pow(1-i/iLi,2))).attr("title",$(o).text());
+		});
+		$("#${id}").tagcloud({height:${height}});
+	]]>
+	</jsdocready>
+	<jsimport>
+		<jsfile>jquery</jsfile>
+		<jsfile>jquery-tagcloud</jsfile>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+	
+</component>

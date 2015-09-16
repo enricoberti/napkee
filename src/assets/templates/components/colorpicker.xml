@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}" class="napkeeComponent napkeeColorpicker" data-color="${color}" data-color-format="hex"><div style="background-color: ${color}"></div></div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	width:30px;
+	height:30px;
+	z-index:${z};
+}
+#${id} div {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 30px;
+	height: 30px;
+	background: url(images/select.png) center;
+}
+	]]>
+	</css>
+	<jsdocready>
+		$('#${id}').colorpicker().on("changeColor", function(e){
+			$('#${id} div').css('backgroundColor', e.color.toHex());
+		});
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

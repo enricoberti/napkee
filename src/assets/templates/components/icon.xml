@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+	${code}
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	width:${width};
+	height:${height};
+	font-size:${height};
+	z-index:${z};
+	border:${border};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+$("#${id}").click(function(event){
+	${clickCode}
+});
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

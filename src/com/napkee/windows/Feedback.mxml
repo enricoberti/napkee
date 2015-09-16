@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="418" height="296" title="Give feedback on Napkee" showCloseButton="true" initialize="initWin()" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+
+	<mx:Script>
+		<![CDATA[
+			import com.napkee.NapkeeApplication;
+			
+			import mx.controls.Alert;
+			import mx.events.CloseEvent;
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+		
+			private function initWin():void
+			{
+				feedbackVersion.text = NapkeeApplication.application.appUpdater.getApplicationVersion();
+				feedbackMail.editable = true;
+				feedbackMessage.editable = true;
+				feedbackSendBtn.enabled = true;
+				feedbackMail.text = "";
+				feedbackMessage.text = "";
+			}
+			
+			protected function sendData(event:MouseEvent):void
+			{
+				feedbackMail.editable = false;
+				feedbackMessage.editable = false;
+				feedbackSendBtn.enabled = false;
+				feedback.send();				
+			}
+			
+			protected function feedbackSent(event:ResultEvent):void
+			{
+				Alert.show('Thanks, your message has been sent.', 'Napkee Feedback', mx.controls.Alert.OK);
+				initWin();
+				this.dispatchEvent(new Event(CloseEvent.CLOSE));
+			}
+			
+			protected function feedbackFault(event:FaultEvent):void
+			{
+				Alert.show('Whoops, it didn\'t work. Can you please try again? If not, please write at support@napkee.com', 'Napkee Feedback', mx.controls.Alert.OK);
+				initWin();				
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:Label id="ca" y="10" x="6">
+		<mx:text>Thanks for helping making Napkee a better product!</mx:text>
+	</mx:Label>
+	<mx:Label x="10" y="77" text="Your email" />
+	<mx:Label x="10" y="47" text="Version" />
+	<mx:TextInput id="feedbackVersion" x="75" y="43" width="313" editable="false"/>
+	<mx:Label x="10" y="107" text="Message" />
+	<mx:TextInput x="75" y="73" width="313" id="feedbackMail"/>
+	<mx:TextArea x="75" y="107" width="313" height="102" id="feedbackMessage"/>
+	<mx:Button id="feedbackSendBtn" x="335" y="220" label="Send" click="sendData(event)"/>
+
+	<mx:HTTPService id="feedback" url="http://www.napkee.com/feedback/index.php" useProxy="false" method="POST" result="feedbackSent(event)" fault="feedbackFault(event)">
+		<mx:request xmlns="">
+			<email>{feedbackMail.text}</email>
+			<message>{feedbackMessage.text}</message>
+			<version>{feedbackVersion.text}</version>
+		</mx:request>
+	</mx:HTTPService>
+	
+</mx:TitleWindow>

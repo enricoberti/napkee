@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}" class="btn-group napkeeComponent napkeeButtonbar">
+${code}
+</div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	width:${width};
+	${buttonHeight}
+	z-index:${z};
+	font-size: ${fontSize};
+	font-style:${fontStyle};
+	font-weight:${fontWeight};
+	text-decoration:${textDecoration};
+}
+#${id} li {
+	${buttonWidth}
+	${buttonHeight}
+	${lineHeight}
+}
+#${id} li a{
+	text-decoration:${textDecoration};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+${clickCode}
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

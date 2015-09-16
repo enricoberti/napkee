@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<span id="container${id}" class="napkeeComponent napkeeRadiobutton">
+	<label for="${id}" class="radio"><input id="${id}" type="radio" name="${id}" disabled="${disabled}" checked="${checked}" />
+	${label}</label>
+</span>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#container${id}{
+	left:${left};
+	top:${top};
+	width:${width};
+	height:${height};
+	z-index:${z};
+	font-size: ${fontSize};
+	font-style:${fontStyle};
+	font-weight:${fontWeight};
+	text-decoration:${textDecoration};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+$("#container${id}").click(function(event){
+	${clickCode}
+});
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

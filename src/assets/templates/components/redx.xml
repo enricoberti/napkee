@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<img id="${id}" src="images/redx.png" class="napkeeComponent napkeeRedX" />
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	width:${width};
+	height:${height};
+	z-index:${z};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+$("#${id}").click(function(event){
+});
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

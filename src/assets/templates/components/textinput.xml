@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<input id="${id}" type="text" value="${label}" disabled="${disabled}" class="napkeeComponent napkeeTextinput" />
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	width:${width};
+	z-index:${z};
+	background-color:${color};
+	color:${labelColor};
+	font-size: ${fontSize};
+	font-style:${fontStyle};
+	font-weight:${fontWeight};
+	text-decoration:${textDecoration};
+	text-align:${textAlign};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+$("#${id}").click(function(event){
+	event.stopPropagation();
+	event.preventDefault();
+});
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+	
+</component>

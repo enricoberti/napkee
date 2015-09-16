@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<span id="${id}" class="napkeeComponent napkeeBreadcrumbs">${code}</span>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	width:${width};
+	height:${height};
+	z-index:${z};
+	font-size: ${fontSize};
+	font-style:${fontStyle};
+	font-weight:${fontWeight};
+	text-decoration:${textDecoration};
+	color:${color};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+${clickCode}
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+	
+</component>

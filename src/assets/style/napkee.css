@@ -1,0 +1,153 @@
+/* CSS file */
+@namespace mx "library://ns.adobe.com/flex/mx";
+
+@font-face
+{
+    src:url("alterego.swf");
+    font-family: "AlterEgo BB";
+    font-weight:normal;
+}
+
+mx|Application 
+{
+	modal-transparency-color:#333333;
+	modal-transparency:0.7;
+	modal-transparency-blur:0; 
+}
+
+mx|TextInput
+{
+	border-color:#333333;
+}
+
+.previewCanvas
+{
+}
+
+.tab
+{
+	font-family: "AlterEgo BB";
+	font-weight:normal;
+	color:#607F92;
+	font-size:14;
+	theme-color:#999999;
+}
+
+
+.projectName
+{
+	font-family: "AlterEgo BB";
+	font-weight:normal;
+	color:#333333;
+	font-size:30;
+	border-style:solid;
+	border-color:#999999;
+	theme-color:#607F92;
+	background-alpha:0;
+}
+
+
+.mockupFileList
+{
+	font-family: "AlterEgo BB";
+	font-weight:normal;
+	font-size:14;
+	color:#607F92;
+}
+
+.lightButton
+{
+	font-family: "AlterEgo BB";
+	font-weight:normal;
+	font-size:14;
+	border-color:#333333;
+	color:#FFFFFF;
+	fill-alphas:1.0, 1.0;
+	fill-colors:#F7F7F7, #BEBEBE, #BEBEBE, #BEBEBE;
+	theme-color:#959595;
+}
+
+.darkButton
+{
+	font-family: "AlterEgo BB";
+	font-weight:normal;
+	font-size:14;
+	border-color:#333333;
+	color:#FFFFFF;
+	fill-alphas:1.0, 1.0;
+	fill-colors:#607F92, #607F92, #A1B1BE, #A1B1BE;
+	theme-color:#959595;
+}
+
+.mainToggleButtonBar
+{
+	button-style-name: toggleButtonBarButton;
+	color: #607F92;
+}
+
+.toggleButtonBarButton
+{
+	font-family: "AlterEgo BB";
+	font-weight:normal;
+	theme-color: #999999;
+	fill-alphas: 1.0, 1.0, 1.0, 1.0;
+	fill-colors: #F7F7F7, #BEBEBE, #5C6371, #888E99;
+	color: #607F92;
+	font-size: 18;
+	text-roll-over-color: #FFFFFF;
+}
+.selectedToggleButtonBarButton
+{
+	font-family: "AlterEgo BB";
+	font-weight:normal;
+	theme-color: #999999;
+	fill-colors: #5C6371, #888E99, #5C6371, #888E99;
+	color: #FFFFFF;
+	font-size: 18;
+	fill-alphas: 1.0, 1.0, 1.0, 1.0;
+}
+
+.copyToClipboard
+{
+	font-family: "AlterEgo BB";
+	font-weight:normal;
+	theme-color: #999999;
+	fill-alphas: 1.0, 1.0, 1.0, 1.0;
+	fill-colors: #F7F7F7, #BEBEBE, #5C6371, #888E99;
+	color: #607F92;
+	font-size: 13;
+	text-roll-over-color: #FFFFFF;
+}
+
+.pointyLeft
+{
+	color: #FFFFFF;
+	upSkin: Embed(source="../images/iphone/left.png",scaleGridLeft="14",scaleGridTop="1",scaleGridRight="154",scaleGridBottom="29");
+	overSkin: Embed(source="../images/iphone/left.png",scaleGridLeft="14",scaleGridTop="1",scaleGridRight="154",scaleGridBottom="29");
+	downSkin: Embed(source="../images/iphone/leftSelected.png",scaleGridLeft="14",scaleGridTop="1",scaleGridRight="154",scaleGridBottom="29");
+	disabledSkin: Embed(source="../images/iphone/leftDisabled.png",scaleGridLeft="14",scaleGridTop="1",scaleGridRight="154",scaleGridBottom="29");
+}
+.pointyRight
+{
+	color: #FFFFFF;
+	upSkin: Embed(source="../images/iphone/right.png",scaleGridLeft="4",scaleGridTop="1",scaleGridRight="145",scaleGridBottom="29");
+	overSkin: Embed(source="../images/iphone/right.png",scaleGridLeft="4",scaleGridTop="1",scaleGridRight="145",scaleGridBottom="29");
+	downSkin: Embed(source="../images/iphone/rightSelected.png",scaleGridLeft="4",scaleGridTop="1",scaleGridRight="145",scaleGridBottom="29");
+	disabledSkin: Embed(source="../images/iphone/rightDisabled.png",scaleGridLeft="4",scaleGridTop="1",scaleGridRight="145",scaleGridBottom="29");
+}
+.pointyCenter
+{
+	color: #FFFFFF;
+	upSkin: Embed(source="../images/iphone/center.png",scaleGridLeft="4",scaleGridTop="1",scaleGridRight="155",scaleGridBottom="29");
+	overSkin: Embed(source="../images/iphone/center.png",scaleGridLeft="4",scaleGridTop="1",scaleGridRight="155",scaleGridBottom="29");
+	downSkin: Embed(source="../images/iphone/centerSelected.png",scaleGridLeft="4",scaleGridTop="1",scaleGridRight="155",scaleGridBottom="29");
+	disabledSkin: Embed(source="../images/iphone/centerDisabled.png",scaleGridLeft="4",scaleGridTop="1",scaleGridRight="155",scaleGridBottom="29");
+}
+.alertButton
+{
+	color: #FFFFFF;
+	upSkin: Embed(source="../images/iphone/alertBoxButton.png",scaleGridLeft="4",scaleGridTop="4",scaleGridRight="110",scaleGridBottom="36");
+	overSkin: Embed(source="../images/iphone/alertBoxButton.png",scaleGridLeft="4",scaleGridTop="4",scaleGridRight="110",scaleGridBottom="36");
+	downSkin: Embed(source="../images/iphone/alertBoxButton.png",scaleGridLeft="4",scaleGridTop="4",scaleGridRight="110",scaleGridBottom="36");
+	disabledSkin: Embed(source="../images/iphone/alertBoxButton.png",scaleGridLeft="4",scaleGridTop="4",scaleGridRight="110",scaleGridBottom="36");
+}

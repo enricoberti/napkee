@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" horizontalAlign="center" width="400" height="300" title="About Napkee" showCloseButton="true" creationComplete="init()">
+
+	<mx:Script>
+		<![CDATA[
+			import com.napkee.NapkeeApplication;
+			import com.napkee.managers.ApplicationManager;
+			import com.napkee.managers.UIManager;
+			import com.napkee.utils.StringConstants;
+			import com.napkee.utils.StringUtils;
+			
+			import flash.net.navigateToURL;
+			
+			import mx.events.CloseEvent;
+			
+			
+			[Bindable] private var appVersion:String;
+			[Bindable] private var flashVersion:String;
+			[Bindable] private var registeredTo:String;
+			[Bindable] private var volumeLicense:String;
+			
+			public function init():void
+			{
+				appVersion = NapkeeApplication.application.appUpdater.getApplicationVersion();
+				var ver:String = Capabilities.version;
+                var dbg:String = (Capabilities.isDebugger) ? ' (debug)' : '';
+                flashVersion = ver + dbg;
+			}
+			
+			private function returnToNapkee():void
+			{
+				this.dispatchEvent(new Event(CloseEvent.CLOSE));	
+			}
+			
+			
+			
+			protected function openGithub(event:MouseEvent):void
+			{
+				navigateToURL(new URLRequest("https://github.com/enricoberti/napkee"));
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:Spacer height="10"/>
+	<mx:Image source="assets/images/napkeeLogoExtended.png"/>
+	<mx:Spacer height="20"/>
+	
+	<mx:Label text="Version: {appVersion}" width="100%" textAlign="center" />
+	<mx:Label text="Flash Player Version: {flashVersion}" width="100%" textAlign="center" />
+	
+	<mx:Spacer height="20"/>
+	<mx:Label text="Apache License, Version 2.0" width="100%" textAlign="center"/>
+	
+	<mx:LinkButton label="github.com/enricoberti/napkee" click="openGithub(event)"  />
+	
+</mx:TitleWindow>

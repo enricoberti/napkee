@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}container" class="napkeeComponent napkeeHorizontalScrollBarContainer">
+	<table cellspacing="0" cellpadding="0">
+		<tr>
+			<td class="napkeeHorizontalScrollArrowLeft">
+				<div style="margin-top:-6px;margin-left:4px;height:14px">
+					<i class="icon-caret-left"></i>
+				</div>
+			</td>
+			<td class="napkeeHorizontalScrollBar">
+				<div id="${id}" class="napkeeHorizontalScrollBar">
+					<div class="napkeeHorizontalScrollHandle">
+					</div>
+				</div>
+			</td>
+			<td class="napkeeHorizontalScrollArrowRight">
+				<div style="margin-top:-6px;margin-left:4px;height:14px">
+					<i class="icon-caret-right"></i>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}container{
+	left:${left};
+	top:${top};
+	z-index:${z};
+}
+#${id}{
+	width:${width};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

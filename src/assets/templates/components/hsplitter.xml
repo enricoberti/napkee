@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}" class="napkeeComponent napkeeHsplitter">
+&nbsp;<i class="icon-ellipsis-vertical"></i>
+</div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	height:${height};
+	line-height:${height};
+	z-index:${z};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+$("#${id}").draggable({ containment: 'parent', axis: 'x', cursor: 'pointer'  });
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

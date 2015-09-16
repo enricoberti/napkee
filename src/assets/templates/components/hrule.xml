@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}" class="napkeeComponent napkeeHrule"></div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	width:${width};
+	height:1px;
+	z-index:${z};
+	background-color:${color};
+	opacity:${opacity};
+	filter:alpha(opacity=${opacityIE});
+}
+	]]>
+	</css>
+	<jsdocready>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

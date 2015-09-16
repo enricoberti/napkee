@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}" class="napkeeComponent napkeeMenubar navbar">
+	<div class="navbar-inner">
+		<ul class="nav">
+			${code}
+		</ul>
+	</div>
+</div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	z-index:${z};
+}
+#${id}.napkee{
+	width:${width};
+	height:${height};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+${clickCode}
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

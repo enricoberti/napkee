@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<table id="${id}" class="napkeeComponent napkeeVCurly">
+	<tr>
+		<td class="napkeeVCurly${topCell}">${topImage}</td>
+		<td class="napkeeVCurlyText">${label}</td>
+		<td class="napkeeVCurly${bottomCell}">${bottomImage}</td>
+	</tr>
+</table>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	width:${width};
+	height:${height};
+	z-index:${z};
+	font-size: ${fontSize};
+	font-style:${fontStyle};
+	font-weight:${fontWeight};
+	text-decoration:${textDecoration};
+	color:${color};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+$("#${id}").click(function(event){
+});
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

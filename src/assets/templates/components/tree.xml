@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}" class="napkeeComponent napkeeTree">
+	<ul id="${id}browser" class="filetree treeview-famfamfam">
+		${code}
+	</ul>
+</div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	height:${height};
+	width:${width};
+	z-index:${z};
+	font-size: ${fontSize};
+	font-style:${fontStyle};
+	font-weight:${fontWeight};
+	text-decoration:${textDecoration};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+$('#${id}browser').treeview();
+${clickCode}
+	]]>
+	</jsdocready>
+	<jsimport>
+		<jsfile>jquery</jsfile>
+		<jsfile>jquery-ui</jsfile>
+	</jsimport>
+	<cssimport>
+		<cssfile>jquery-ui</cssfile>
+	</cssimport>
+
+</component>

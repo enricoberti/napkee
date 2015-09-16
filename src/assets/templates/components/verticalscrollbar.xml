@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}container" class="napkeeComponent napkeeVerticalScrollBarContainer">
+	<div class="napkeeVerticalScrollArrowUp">
+		<i class="icon-caret-up"></i>
+	</div>
+	<div id="${id}" class="napkeeVerticalScrollBar">
+		<div class="napkeeVerticalScrollHandle">
+		</div>
+	</div>
+	<div class="napkeeVerticalScrollArrowDown">
+		<i class="icon-caret-down"></i>
+	</div>
+</div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}container{
+	left:${left};
+	top:${top};
+	z-index:${z};
+}
+#${id}{
+	height:${height};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

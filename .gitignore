@@ -1,0 +1,25 @@
+# OS X nonsense
+.DS_Store
+._*
+
+# vim tmp files
+.*.swp
+.*.swo
+
+# emacs backup files
+.*~
+
+# Build directory and environment
+bin-debug/
+bin-release/
+bin-release-temp/
+
+# Update .xml
+update.xml
+
+# Intellij project files
+.idea/
+*.iml
+
+# Sublime Text temp files
+*.subl*

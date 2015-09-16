@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="480" height="178" title="Unsaved project" showCloseButton="true">
+
+	<mx:Script>
+		<![CDATA[
+			import mx.events.CloseEvent;
+			
+			public static const SAVE_AND_QUIT:String = 'saveAndQuit';
+			public static const QUIT:String = 'quit';
+			
+			[Bindable] public var returnToNapkeeEnabled:Boolean = true;
+			
+			[Bindable] public var dialogText:String = "The project you are working on is new or it has been modified since the last time you saved it.<br>You can <i>quit without saving</i> (losing all your work from the last save), <i>return to Napkee</i> or <i>save the project and quit Napkee</i><br><br><b>What would you like to do?</b>";
+			
+			private function quitWithoutSaving():void
+			{
+				this.dispatchEvent(new Event(UnsavedProjectWindow.QUIT));
+			}
+
+			private function returnToNapkee():void
+			{
+				this.dispatchEvent(new Event(CloseEvent.CLOSE));	
+			}
+
+			private function saveAndQuit():void
+			{
+				this.dispatchEvent(new Event(UnsavedProjectWindow.SAVE_AND_QUIT));	
+			}
+			
+			
+		]]>
+	</mx:Script>
+
+	<mx:TextArea editable="false" borderStyle="none" htmlText="{dialogText}" width="100%" height="100%"/>
+	<mx:ControlBar>
+		<mx:Button label="Quit without saving" click="quitWithoutSaving()"/>
+		<mx:Spacer width="100%" />
+		<mx:Button label="Return to Napkee" click="returnToNapkee()" enabled="{returnToNapkeeEnabled}"/>
+		<mx:Button label="Save and Quit" click="saveAndQuit()"/>
+	</mx:ControlBar>
+	
+</mx:TitleWindow>

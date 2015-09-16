@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CodeMirror</title>
+  <link rel="stylesheet" href="css/codemirror.css">
+  <script src="js/codemirror.js"></script>
+  <script src="js/javascript.js"></script>
+  <style type="text/css">
+    html, body {
+      height: 100%;
+      border: 0;
+    }
+
+    .CodeMirror {
+      font-size: 12px;
+      width: 100%;
+      height: 100%;
+    }
+
+    .CodeMirror-scroll {
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+<textarea id="sourcecode"></textarea>
+<script type="text/javascript">
+
+  var editor = CodeMirror.fromTextArea(document.getElementById("sourcecode"), {
+    mode:'text/javascript',
+    lineNumbers:true,
+    readOnly:true
+  });
+
+  function highlightString(str) {
+    editor.setValue(str);
+  }
+  function getText() {
+    return editor.getValue();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<img id="${id}" src="${source}" class="napkeeComponent napkeeImage" />
+<table border="0" id="${id}table" class="napkeeComponent napkeeImageTable" >
+	<tr>
+		<td align="center" valign="middle">
+			<span id="${id}label" class="napkeeImageLabel">${label}</span>
+		</td>
+	</tr>
+</table>
+
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	width:${width};
+	height:${height};
+	z-index:${z};
+	border:${border};
+}
+
+#${id}table{
+	left:${left};
+	top:${top};
+	width:${width};
+	height:${height};
+	z-index:${zplus};
+	display:${display};
+}
+
+#${id}label{
+	font-size: ${fontSize};
+	font-style:${fontStyle};
+	font-weight:${fontWeight};
+	text-decoration:${textDecoration};
+	text-align:${textAlign};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+$("#${id}").click(function(event){
+	${clickCode}
+});
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

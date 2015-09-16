@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}" class="napkeeComponent napkeeScratchout"></div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	position:absolute;
+	left:${left};
+	top:${top};
+	width:${width};
+	height:${height};
+	z-index:${z};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+var flashvars${id} = {color:"${color}"};
+var params${id} = {wmode: "transparent"};
+var attributes${id} = {};
+swfobject.embedSWF("swf/NapkeeScratchout.swf", "${id}", "${width}", "${height}", "9.0.0", false, flashvars${id}, params${id}, attributes${id});
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

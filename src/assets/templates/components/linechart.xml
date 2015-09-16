@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}" class="napkeeComponent napkeeLinechart"></div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	width:${width};
+	height:${height};
+	z-index:${z};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+var chartOpt${id} = [10,30,20,50,5,35];
+$("#${id}").sparkline(chartOpt${id}, {type: "line", width: "${width}px", height: "${height}px"});
+	]]>
+	</jsdocready>
+	<jsimport>
+		<jsfile>jquery</jsfile>
+		<jsfile>jquery-ui</jsfile>
+	</jsimport>
+	<cssimport>
+		<cssfile>jquery-ui</cssfile>
+	</cssimport>
+</component>

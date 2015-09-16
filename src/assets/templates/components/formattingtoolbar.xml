@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<table id="${id}" border="0" cellspacing="0" cellpadding="0" class="napkeeComponent napkeeFormattingToolbar">
+	<tr>
+		<td><i class="icon-bold"></i></td>
+		<td><i class="icon-italic"></i></td>
+		<td><i class="icon-underline"></i></td>
+		<td><i class="icon-strikethrough"></i></td>
+		<td>
+			<select class="napkeeFormattingToolbarSelect" style="width:50px">
+				<option>style</option>
+			</select>
+		</td>
+		<td><i class="icon-list-ul"></i></td>
+		<td><i class="icon-list-ol"></i></td>
+		<td><i class="icon-undo"></i></td>
+		<td><i class="icon-repeat"></i></td>
+		<td><i class="icon-picture"></i></td>
+		<td><i class="icon-smile"></i></td>
+		<td width="99%">&nbsp;</td>
+	</tr>
+</table>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	width:${width};
+	z-index:${z};
+}
+#${id} td {
+	padding: 4px;
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+$("#${id}").click(function(event){
+});
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}" class="napkeeComponent napkeeTitlewindow modal">
+	${children}
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3>${title}</h3>
+	</div>
+	<div class="modal-body" style="${bodyStyle}">
+    </div>
+    <div class="modal-footer ${footerDisplay}">
+	</div>
+</div>	
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	width:${width};
+	height:${height};
+	z-index:${z};
+	background-color:#FFF;
+	margin-left:0;
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+${code}
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+	
+</component>

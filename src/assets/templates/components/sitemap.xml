@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<ul id="${id}source" class="hide">
+	${code}
+</ul>
+<div id="${id}container" class="napkeeComponent napkeeSitemap"></div>
+
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}container{
+	left:${left};
+	top:${top};
+	z-index:${z};
+	font-size: ${fontSize};
+	font-style:${fontStyle};
+	font-weight:${fontWeight};
+	text-decoration:${textDecoration};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+$('#${id}source').orgChart({container: $("#${id}container")});
+${clickCode}
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+
+</component>

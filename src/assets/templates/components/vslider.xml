@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}" class="napkeeComponent napkeeVslider"></div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}{
+	left:${left};
+	top:${top};
+	height:${height};
+	z-index:${z};
+	font-size: 10px;
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+$('#${id}').slider({
+	min: 0,
+	max: 100,
+	orientation: 'vertical',
+	value: ${value}
+});
+$('#${id}').slider('${enabled}');
+	]]>
+	</jsdocready>
+	<jsimport>
+		<jsfile>jquery</jsfile>
+		<jsfile>jquery-ui</jsfile>
+	</jsimport>
+	<cssimport>
+		<cssfile>jquery-ui</cssfile>
+	</cssimport>
+	
+</component>

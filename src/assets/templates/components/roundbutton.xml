@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}c" class="napkeeComponent napkeeShape">
+<div id="${id}"></div>
+<table border="0" id="${id}table" class="napkeeComponent napkeeShapeTable" >
+	<tr>
+		<td align="center" valign="middle">
+			<span id="${id}label" class="napkeeShapeLabel">${label}</span>
+		</td>
+	</tr>
+</table>
+</div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}c{
+	position:absolute;
+	left:${left};
+	top:${top};
+	width:${width};
+	height:${height};
+	z-index:${z};
+	opacity:${opacity};
+	filter:alpha(opacity=${opacityIE});
+}
+#${id}table{
+	width:${width};
+	height:${height};
+	z-index:${zplus};
+	display:${display};
+}
+
+#${id}label{
+	font-size: ${fontSize};
+	font-style:${fontStyle};
+	font-weight:${fontWeight};
+	text-decoration:${textDecoration};
+	text-align:${textAlign};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+var flashvars${id} = {color:"${color}", borderColor:"${borderColor}", rotation:"${rotation}"};
+var params${id} = {wmode: "transparent"};
+var attributes${id} = {};
+swfobject.embedSWF("swf/${shape}.swf", "${id}", "${width}", "${height}", "9.0.0", false, flashvars${id}, params${id}, attributes${id});
+$("#${id}table").click(function(event){
+	${clickCode}
+});
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

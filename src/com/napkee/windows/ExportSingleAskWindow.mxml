@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="480" height="178" title="Project export already existing" showCloseButton="true">
+
+	<mx:Script>
+		<![CDATA[
+			import mx.events.CloseEvent;
+			
+			[Bindable] public var destination:String;
+			[Bindable] public var newDestination:String;
+			
+			public static const OVERWRITE:String = 'overwrite';
+			public static const CREATE_NEW:String = 'createNew';
+			
+			private function overwrite():void
+			{
+				this.dispatchEvent(new Event(ExportProjectAskWindow.OVERWRITE));
+			}
+
+			private function returnToNapkee():void
+			{
+				this.dispatchEvent(new Event(CloseEvent.CLOSE));	
+			}
+
+			private function createNew():void
+			{
+				this.dispatchEvent(new Event(ExportProjectAskWindow.CREATE_NEW));	
+			}
+			
+			
+		]]>
+	</mx:Script>
+
+	<mx:Text htmlText="The folder {destination} already exists.&lt;br&gt;&lt;br&gt;Would you like to &lt;b&gt;overwrite it&lt;/b&gt; or &lt;b&gt;create a new folder&lt;/b&gt; (&lt;i&gt;{newDestination}&lt;/i&gt;)?" width="100%" height="100%"/>
+	<mx:ControlBar>
+		<mx:Spacer width="100%" />
+		<mx:Button label="Overwrite the existing folder" click="overwrite()"/>
+		<mx:Button label="Create a new folder" click="createNew()"/>
+	</mx:ControlBar>
+	
+</mx:TitleWindow>

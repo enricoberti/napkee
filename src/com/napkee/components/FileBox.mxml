@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="36" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+
+	<mx:Script>
+		<![CDATA[
+			import com.napkee.NapkeeApplication;
+			import com.napkee.vo.BMMLFile;
+			
+			import flash.net.navigateToURL;
+			
+			import mx.controls.Alert;
+			
+			private function removeFile(event:Event):void
+			{
+				NapkeeApplication.application.projectManager.removeFile(data as BMMLFile);
+				event.stopPropagation();
+			}
+			
+			private function openFile(event:Event):void
+			{
+				var f:BMMLFile = data as BMMLFile;
+				try
+				{
+					f.file.openWithDefaultApplication();	
+				} 
+				catch(error:Error) 
+				{
+					Alert.show("You need to install Balsamiq Mockups to open this BMML file.");
+					navigateToURL(new URLRequest("http://www.balsamiq.com"));
+				}
+				
+				event.stopPropagation();
+			}
+			
+			
+		]]>
+	</mx:Script>
+	
+	<mx:HBox width="100%" verticalAlign="middle" paddingLeft="4" paddingRight="4" horizontalAlign="left" height="100%">
+		
+		<mx:Button width="16" height="16" label="" 
+				   icon="@Embed(source='/assets/images/bmmlFile.png')"
+				   overIcon="@Embed(source='/assets/images/bmmlFile.png')" 
+				   downIcon="@Embed(source='/assets/images/bmmlFile.png')" 
+				   cornerRadius="8"
+				   click="openFile(event)"
+				   />
+		
+		<mx:Label width="100%" text="{data.file.name}" textAlign="left" color="#333333" fontSize="11" fontWeight="bold" truncateToFit="true" toolTip="{data.file.nativePath}"/>
+		
+		<mx:Button width="18" height="18" label="" 
+		    icon="@Embed(source='/assets/images/removeFile.png')"
+		    overIcon="@Embed(source='/assets/images/removeFile.png')" 
+		    downIcon="@Embed(source='/assets/images/removeFile.png')" 
+		    cornerRadius="9"
+		    click="removeFile(event)"
+		   />
+		
+	</mx:HBox>
+	
+</mx:Canvas>

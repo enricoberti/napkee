@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}container" class="napkeeComponent napkeeDatagrid">
+	<table id="${id}" class="${style}">
+		${head}
+		${body}
+	</table>
+</div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}container{
+	left:${left};
+	top:${top};
+	z-index:${z};
+	width:${width};
+	height:${height};
+	overflow:${overflow};
+	border:${border};
+}
+#${id}container table.napkee {
+	margin:0;
+	padding:0;
+	border-spacing:0px;
+	width:100%;
+	height:${tableHeight};
+	font-size: ${fontSize};
+	font-style:${fontStyle};
+	font-weight:${fontWeight};
+	text-decoration:${textDecoration};
+	text-align:${textAlign};
+}
+
+#${id}container table.napkee th{
+	background-color:#CCC;
+	height:20px;
+	padding-left:5px;
+}
+#${id}container table.napkee td{
+	padding-left:5px;
+	height:${rowHeight};
+	border:0px;
+}
+
+#${id}container table.napkee .verticalLine{
+	border-right:1px solid #000;
+}
+
+#${id}container table.napkee .horizontalLine{
+	border-bottom:1px solid #000;
+}
+#${id}container table.napkee td.odd{
+	background-color:${oddColor};
+}
+#${id}container table.napkee td.even{
+	background-color:${evenColor};
+}
+
+#${id}container table.napkee td.filler{
+	height:${fillerHeight};
+}
+
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+
+	]]>
+	</jsdocready>
+	<jsimport>
+	</jsimport>
+	<cssimport>
+	</cssimport>
+</component>

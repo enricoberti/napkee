@@ -1,0 +1,9 @@
+<flex-config>
+   <compiler>
+      <keep-as3-metadata>
+          <name>Table</name>
+          <name>Column</name>
+          <name>Id</name>
+      </keep-as3-metadata>
+   </compiler>
+</flex-config>

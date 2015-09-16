@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component>
+	<html>
+	<![CDATA[
+<div id="${id}container" class="napkeeComponent napkeeVolumeslider">
+	<table id="${id}box" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="20" align="left">
+				<i id="${id}volume" class="icon-volume-up"></i>
+			</td>
+			<td>
+				<div id="${id}"></div>
+			</td>
+		</tr>
+	</table>
+</div>
+	]]>
+	</html>
+	<css>
+	<![CDATA[
+#${id}container{
+	left:${left};
+	top:${top};
+	z-index:${z};
+}
+#${id}box{
+	width:${width};
+}
+	]]>
+	</css>
+	<jsdocready>
+	<![CDATA[
+$('#${id}').slider({
+	min: 0,
+	max: 100,
+	orientation: 'horizontal',
+	value: 30
+});
+	]]>
+	</jsdocready>
+	<jsimport>
+		<jsfile>jquery</jsfile>
+		<jsfile>jquery-ui</jsfile>
+	</jsimport>
+	<cssimport>
+		<cssfile>jquery-ui</cssfile>
+	</cssimport>
+
+</component>
