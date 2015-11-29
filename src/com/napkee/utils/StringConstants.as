@@ -2,7 +2,7 @@ package com.napkee.utils
 {
   public class StringConstants
   {
-    public static const UPDATE_URL:String = "https://raw.githubusercontent.com/enricoberti/napkee/master/release/update.xml";
+    public static const UPDATE_URL:String = "https://raw.githubusercontent.com/enricoberti/napkee/master/release/latest.xml";
     
     public static const NAPKEE_CONN_NAME:String = "_NapkeeDesktopConnection";
     public static const MOCKUPS_CONN_NAME:String = "_MockupsDesktopConnection";
