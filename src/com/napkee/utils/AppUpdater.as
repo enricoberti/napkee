@@ -28,10 +28,7 @@ package com.napkee.utils
     }
     
     public function checkForUpdate():void {
-      var ver:String = Capabilities.version;
-      var dbg:String = (Capabilities.isDebugger) ? ' (debug)' : '';
-      var flashVersion:String = ver + dbg;
-      var updateURL:String = StringConstants.UPDATE_URL + "?v="+getApplicationVersion()+"&fv="+flashVersion; // Server-side XML file describing update
+      var updateURL:String = StringConstants.UPDATE_URL; // Server-side XML file describing update
       loadDataXml(updateURL);
     }
     
