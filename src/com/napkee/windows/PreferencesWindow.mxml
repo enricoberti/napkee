@@ -120,12 +120,6 @@
     <mx:Canvas label="Software Updates" width="100%" height="100%">
       <mx:CheckBox  x="177.5" y="51" id="autoUpdateCheck" label="Automatically check for updates at launch" selected="{checkForUpdates}"/>
     </mx:Canvas>
-    <mx:Canvas label="Webcam" width="100%" height="100%">
-      <mx:HBox left="5" top="5" bottom="5" right="5" verticalAlign="middle">
-        <mx:HTML location="http://www.napkee.com/components/NapkeeHostedCam" width="320" height="240" />
-        <mx:Text htmlText="The first time you see the Flash Settings dialog click on &lt;b&gt;Allow&lt;/b&gt;. Then right click on your image, select Settings. From the Privacy tab check &lt;b&gt;Remember&lt;/b&gt; and click on &lt;b&gt;Close&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;If you already see your webcam image you are set and ready to go!" width="100%" height="100%" />
-      </mx:HBox>
-    </mx:Canvas>
   </mx:TabNavigator>
   
   
