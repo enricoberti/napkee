@@ -9,10 +9,9 @@ package com.napkee.vo
 	
 	import mx.collections.ArrayCollection;
 	
-	public class BMMLFile {
+	public class BMPRFile {
 		
 		[Bindable] public var file:File;
-		[Bindable] public var name:String = "";
 
         private function get xml(): XML {
             var fs:FileStream = new FileStream();

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<napkee:NapkeeApplication
-    layout="absolute" backgroundGradientAlphas="[1.0, 1.0]" backgroundGradientColors="[#5C7F93, #5C7F93]" 
-    width="1000" height="600" visible="false"
-    applicationComplete="initApplication()"
-	invoke="onInvoke(event)" activate="showApplication(event)" closing="exitHandler(event)"  nativeDragEnter="UIManager.onDragIn(event)" nativeDragDrop="UIManager.onDrop(event)"
-    xmlns:fx="http://ns.adobe.com/mxml/2009"
-    xmlns:mx="library://ns.adobe.com/flex/mx"
-    xmlns:s="library://ns.adobe.com/flex/spark"
-    xmlns:components="com.napkee.components.*"
-    xmlns:napkee="com.napkee.*">
+<napkee:NapkeeApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
+						  xmlns:mx="library://ns.adobe.com/flex/mx"
+						  xmlns:s="library://ns.adobe.com/flex/spark"
+						  xmlns:components="com.napkee.components.*"
+						  xmlns:napkee="com.napkee.*"
+						  visible="false" width="1000" height="600"
+						  activate="showApplication(event)" applicationComplete="initApplication()"
+						  backgroundGradientAlphas="[1.0, 1.0]"
+						  backgroundGradientColors="[#5C7F93, #5C7F93]" closing="exitHandler(event)"
+						  invoke="onInvoke(event)" layout="absolute"
+						  nativeDragDrop="UIManager.onDrop(event)"
+						  nativeDragEnter="UIManager.onDragIn(event)">
 
-	<fx:Style source="assets/style/napkee.css" />
+	<fx:Style source="assets/style/napkee.css"/>
     
 	<fx:Script>
 		<![CDATA[
@@ -83,41 +85,61 @@
 	</fx:Script>
 	
     <fx:Declarations>
-    	<mx:Fade id="fadeOut" duration="800" alphaFrom="0.6" alphaTo="0.0"/>
-    	<mx:Fade id="fadeIn" duration="200" alphaFrom="0.0" alphaTo="0.6"/>
+    	<mx:Fade id="fadeOut" alphaFrom="0.6" alphaTo="0.0" duration="800"/>
+    	<mx:Fade id="fadeIn" alphaFrom="0.0" alphaTo="0.6" duration="200"/>
     </fx:Declarations>
 
-	<mx:ApplicationControlBar dock="true" fillAlphas="[1.0, 1.0]" fillColors="[#FFFFFF, #C8CACB]" height="95" mouseOver="UIManager.hideCopyToClipboard(event)" nativeDragEnter="UIManager.onDragIn(event)" nativeDragDrop="UIManager.onDrop(event)">
+	<mx:ApplicationControlBar height="95" dock="true" fillAlphas="[1.0, 1.0]"
+							  fillColors="[#FFFFFF, #C8CACB]"
+							  mouseOver="UIManager.hideCopyToClipboard(event)"
+							  nativeDragDrop="UIManager.onDrop(event)"
+							  nativeDragEnter="UIManager.onDragIn(event)">
 		<mx:Spacer width="10"/>
 		<mx:Image source="assets/images/napkeeLogo.png"/>
 		<mx:Spacer width="10"/>
-		<mx:TextInput id="projectName" styleName="projectName" width="100%" focusThickness="0" cornerRadius="6" change="UIManager.projectNameChangeHandler()" text="{projectManager.project.name}" toolTip="Click to edit" mouseOver="focusTextColor()" mouseOut="overTextColor()" 
-			focusIn="focusTextColor()" focusOut="blurTextColor()"/>
+		<mx:TextInput id="projectName" width="100%" change="UIManager.projectNameChangeHandler()"
+					  cornerRadius="6" focusIn="focusTextColor()" focusOut="blurTextColor()"
+					  focusThickness="0" mouseOut="overTextColor()" mouseOver="focusTextColor()"
+					  styleName="projectName" text="{projectManager.project.name}"
+					  toolTip="Click to edit"/>
 		<mx:Spacer width="20"/>
 	</mx:ApplicationControlBar>
 	
 	
-	<mx:VBox id="mainCnt" paddingTop="20" width="100%" height="100%" horizontalGap="0" verticalGap="0">
+	<mx:VBox id="mainCnt" width="100%" height="100%" horizontalGap="0" paddingTop="20"
+			 verticalGap="0">
 		
 	
-	<mx:HDividedBox id="mainDivider" width="100%" height="100%" nativeDragEnter="UIManager.onDragIn(event)" nativeDragDrop="UIManager.onDrop(event)">
-		<mx:VBox id="vBoxFileList" height="100%" width="250" verticalGap="0" mouseOver="UIManager.hideCopyToClipboard(event)" minWidth="220">
-			<mx:Canvas backgroundColor="#FFFFFF" width="100%" height="30" borderStyle="none">
-				<mx:HBox width="100%" verticalAlign="middle" paddingLeft="4" paddingRight="4" horizontalAlign="left" height="100%">
-					<mx:Label width="100%" text="mockup files" styleName="mockupFileList" truncateToFit="true"/>
-					<mx:Button width="18" height="18" label="" 
-					    icon="@Embed(source='assets/images/addFile.png')"
-					    overIcon="@Embed(source='assets/images/addFileOver.png')" 
-					    downIcon="@Embed(source='assets/images/addFileDown.png')" 
-					    cornerRadius="9"
-					    click="UIManager.loadBMML(event)"
-					   />
+	<mx:HDividedBox id="mainDivider" width="100%" height="100%"
+					nativeDragDrop="UIManager.onDrop(event)"
+					nativeDragEnter="UIManager.onDragIn(event)">
+		<mx:VBox id="vBoxFileList" width="250" height="100%" minWidth="220"
+				 mouseOver="UIManager.hideCopyToClipboard(event)" verticalGap="0">
+			<mx:Canvas width="100%" height="30" backgroundColor="#FFFFFF" borderStyle="none">
+				<mx:HBox width="100%" height="100%" horizontalAlign="left" paddingLeft="4"
+						 paddingRight="4" verticalAlign="middle">
+					<mx:Label width="100%" styleName="mockupFileList" text="mockups"
+							  truncateToFit="true"/>
+					<mx:Button width="18" height="18" label="" click="UIManager.loadBMML(event)"
+							   cornerRadius="9"
+							   downIcon="@Embed(source='assets/images/addFileDown.png')"
+							   icon="@Embed(source='assets/images/addFile.png')"
+							   overIcon="@Embed(source='assets/images/addFileOver.png')"/>
 				</mx:HBox>
 			</mx:Canvas>
-			<mx:List id="fileList" dataProvider="{projectManager.project.files}" width="100%" height="100%" itemClick="UIManager.onFileClick(event)" nativeDragEnter="UIManager.onDragIn(event)" nativeDragDrop="UIManager.onDrop(event)" dragDrop="UIManager.onListDrop(event)" selectionColor="#C8CACB" rollOverColor="#C8CACB" allowMultipleSelection="true" alternatingItemColors="[#EDF0F4,#FFFFFF]"  borderStyle="none" dragEnabled="true" dragMoveEnabled="true" dropEnabled="true">
+			<mx:List id="fileList" width="100%" height="100%" allowMultipleSelection="true"
+					 alternatingItemColors="[#EDF0F4,#FFFFFF]" borderStyle="none"
+					 dataProvider="{projectManager.project.files}"
+					 dragDrop="UIManager.onListDrop(event)" dragEnabled="true"
+					 dragMoveEnabled="true" dropEnabled="true"
+					 itemClick="UIManager.onFileClick(event)"
+					 nativeDragDrop="UIManager.onDrop(event)"
+					 nativeDragEnter="UIManager.onDragIn(event)" rollOverColor="#C8CACB"
+					 selectionColor="#C8CACB">
 				<mx:itemRenderer>
 					<fx:Component>
-						<components:FileBox nativeDragEnter="UIManager.onDragIn(event)" nativeDragDrop="UIManager.onDrop(event)" >
+						<components:FileBox nativeDragDrop="UIManager.onDrop(event)"
+											nativeDragEnter="UIManager.onDragIn(event)">
 							<fx:Script>
 								<![CDATA[
 									import com.napkee.managers.UIManager;
@@ -127,36 +149,55 @@
 					</fx:Component>
 				</mx:itemRenderer> 
 			</mx:List>
-			<mx:Canvas backgroundColor="#E6EAEE" width="100%" height="45" borderStyle="none">
-				<mx:HBox width="100%" verticalAlign="middle" paddingLeft="4" paddingRight="4" horizontalAlign="right" height="100%" horizontalGap="5">
-					<mx:Button id="exportProjectBtn" label="export project" styleName="darkButton" enabled="false" click="UIManager.exportProject(event)"/>
+			<mx:Canvas width="100%" height="45" backgroundColor="#E6EAEE" borderStyle="none">
+				<mx:HBox width="100%" height="100%" horizontalAlign="right" horizontalGap="5"
+						 paddingLeft="4" paddingRight="4" verticalAlign="middle">
+					<mx:Button id="exportProjectBtn" label="export project"
+							   click="UIManager.exportProject(event)" enabled="false"
+							   styleName="darkButton"/>
 				</mx:HBox>
 			</mx:Canvas>
 		</mx:VBox>
-		<mx:VBox id="mainPanel" height="100%" width="100%" verticalGap="0">
-			<mx:TabNavigator id="naviWeb" width="100%" height="100%" creationPolicy="all" horizontalGap="4" tabStyleName="tab" selectedTabTextStyleName="tab" tabHeight="30" borderColor="#FFFFFF" change="UIManager.hideCopyToClipboard(event)">
-				<mx:Canvas id="webPreviewTab" label="preview" width="100%" height="100%">
-					<mx:HTML id="webPreview" width="100%" height="100%" left="5" right="5"/>
+		<mx:VBox id="mainPanel" width="100%" height="100%" verticalGap="0">
+			<mx:TabNavigator id="naviWeb" width="100%" height="100%" borderColor="#FFFFFF"
+							 change="UIManager.hideCopyToClipboard(event)" creationPolicy="all"
+							 horizontalGap="4" selectedTabTextStyleName="tab" tabHeight="30"
+							 tabStyleName="tab">
+				<mx:Canvas id="webPreviewTab" width="100%" height="100%" label="preview">
+					<mx:HTML id="webPreview" left="5" right="5" width="100%" height="100%"/>
 				</mx:Canvas>
-				<mx:Canvas id="htmlTab" label="html" width="100%" height="100%">
-					<mx:HTML id="webHTML" width="100%" height="100%" location="assets/codemirror/html.html" left="5" right="5" mouseOver="UIManager.showCopyToClipboard(event,webHTML.htmlLoader.window.getText())"/>
+				<mx:Canvas id="htmlTab" width="100%" height="100%" label="html">
+					<mx:HTML id="webHTML" left="5" right="5" width="100%" height="100%"
+							 location="assets/codemirror/html.html"
+							 mouseOver="UIManager.showCopyToClipboard(event,webHTML.htmlLoader.window.getText())"/>
 				</mx:Canvas>
-				<mx:Canvas id="cssTab" label="css" width="100%" height="100%">
-					<mx:HTML id="webCSS" width="100%" height="100%" location="assets/codemirror/css.html" left="5" right="5" mouseOver="UIManager.showCopyToClipboard(event,webCSS.htmlLoader.window.getText())"/>
+				<mx:Canvas id="cssTab" width="100%" height="100%" label="css">
+					<mx:HTML id="webCSS" left="5" right="5" width="100%" height="100%"
+							 location="assets/codemirror/css.html"
+							 mouseOver="UIManager.showCopyToClipboard(event,webCSS.htmlLoader.window.getText())"/>
 				</mx:Canvas>
-				<mx:Canvas id="jsTab" label="js" width="100%" height="100%">
-					<mx:HTML id="webJS" width="100%" height="100%" location="assets/codemirror/js.html" left="5" right="5" mouseOver="UIManager.showCopyToClipboard(event,webJS.htmlLoader.window.getText())"/>
+				<mx:Canvas id="jsTab" width="100%" height="100%" label="js">
+					<mx:HTML id="webJS" left="5" right="5" width="100%" height="100%"
+							 location="assets/codemirror/js.html"
+							 mouseOver="UIManager.showCopyToClipboard(event,webJS.htmlLoader.window.getText())"/>
 				</mx:Canvas>
-				<mx:Canvas id="bmmlTab" label="bmml" width="100%" height="100%">
-					<mx:HTML id="bmmlSourceW" width="100%" height="100%" location="assets/codemirror/xml.html" left="5" right="5" mouseOver="UIManager.showCopyToClipboard(event,bmmlSourceW.htmlLoader.window.getText())" />
+				<mx:Canvas id="bmmlTab" width="100%" height="100%" label="bmml">
+					<mx:HTML id="bmmlSourceW" left="5" right="5" width="100%" height="100%"
+							 location="assets/codemirror/xml.html"
+							 mouseOver="UIManager.showCopyToClipboard(event,bmmlSourceW.htmlLoader.window.getText())"/>
 				</mx:Canvas>
 			</mx:TabNavigator>
 		</mx:VBox>
 	</mx:HDividedBox>
-		<mx:HBox id="updateMessage" backgroundColor="#666666" height="0" width="100%" horizontalAlign="center" verticalAlign="middle" visible="false">
-			<mx:Label id="updateMessageLbl" text="A new version of Napkee is available for download" color="#FFFFFF" />
-			<mx:LinkButton label="Go and download it now!" click="openDownloadNapkee()" color="#FFFFFF" />
+		<mx:HBox id="updateMessage" visible="false" width="100%" height="0" backgroundColor="#666666"
+				 horizontalAlign="center" verticalAlign="middle">
+			<mx:Label id="updateMessageLbl" color="#FFFFFF"
+					  text="A new version of Napkee is available for download"/>
+			<mx:LinkButton label="Go and download it now!" click="openDownloadNapkee()"
+						   color="#FFFFFF"/>
 		</mx:HBox>
 	</mx:VBox>
-	<mx:Button id="ctc" label="copy to clipboard" styleName="copyToClipboard" click="UIManager.copyToClipboard(event)" right="30" top="60" visible="false" showEffect="{fadeIn}" />
+	<mx:Button id="ctc" visible="false" right="30" top="60" label="copy to clipboard"
+			   click="UIManager.copyToClipboard(event)" showEffect="{fadeIn}"
+			   styleName="copyToClipboard"/>
 </napkee:NapkeeApplication>

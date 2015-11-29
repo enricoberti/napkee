@@ -15,6 +15,7 @@ package com.napkee.managers
 	import com.napkee.utils.StringUtils;
 	import com.napkee.utils.TimeUtils;
 	import com.napkee.vo.BMMLFile;
+	import com.napkee.vo.BMPRFile;
 	import com.napkee.windows.ExportProjectAskWindow;
 	import com.napkee.windows.ExportSingleAskWindow;
 	
@@ -216,7 +217,7 @@ package com.napkee.managers
 			mockupFile = new File(ApplicationManager.getLastOpenedFolder());
 			mockupFile.addEventListener(FileListEvent.SELECT_MULTIPLE, selectMultipleHandler);
 			try {
-				mockupFile.browseForOpenMultiple("Select one or more BMML files",[new FileFilter("Balsamiq Mockups file", "*.bmml")]);
+				mockupFile.browseForOpenMultiple("Select one or more BMML or BMPR files",[new FileFilter("Balsamiq Mockups file", "*.bmml"), new FileFilter("Balsamiq Mockups project", "*.bmpr")]);
 			}
 			catch (error:Error){
 				// cannot open more than one browse files
@@ -237,12 +238,17 @@ package com.napkee.managers
 		{
 		    var fileName:String = f.nativePath.toString();
 		    if(fileName.toLowerCase().indexOf(".bmml") != -1){
-		    	var fi:BMMLFile = new BMMLFile();
-				fi.file = f;
-				NapkeeApplication.application.projectManager.addFile(fi);
+		    	var bmml:BMMLFile = new BMMLFile();
+				bmml.file = f;
+				NapkeeApplication.application.projectManager.addFile(bmml);
 		    }
+			else if (fileName.toLowerCase().indexOf(".bmpr") != -1) {
+				var bmpr:BMPRFile = new BMPRFile();
+				bmpr.file = f;
+				NapkeeApplication.application.projectManager.addProject(bmpr);
+			}
 		    else{
-		    	Alert.show("Napkee works only with Balsamiq Mockups files.");
+		    	Alert.show("Napkee works only with Balsamiq Mockups files (bmml or bmpr).");
 		    }
 		}
 		

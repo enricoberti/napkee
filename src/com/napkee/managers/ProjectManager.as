@@ -10,17 +10,27 @@ package com.napkee.managers
 	import com.napkee.utils.StringConstants;
 	import com.napkee.utils.StringUtils;
 	import com.napkee.vo.BMMLFile;
+	import com.napkee.vo.BMPRFile;
 	
+	import flash.data.SQLConnection;
+	import flash.data.SQLMode;
+	import flash.data.SQLResult;
+	import flash.data.SQLStatement;
 	import flash.events.Event;
+	import flash.events.SQLErrorEvent;
+	import flash.events.SQLEvent;
 	import flash.filesystem.File;
 	import flash.filesystem.FileMode;
 	import flash.filesystem.FileStream;
 	import flash.net.FileFilter;
+	import flash.xml.XMLDocument;
+	import flash.xml.XMLNode;
 	
 	import mx.collections.ArrayCollection;
 	import mx.controls.Alert;
 	import mx.controls.Button;
 	import mx.core.FlexGlobals;
+	import mx.rpc.xml.SimpleXMLEncoder;
 	
 	public class ProjectManager
 	{
@@ -301,6 +311,77 @@ package com.napkee.managers
 				currentContent.mockups.appendChild(fi);
 			}
 			return currentContent;
+		}
+		
+		public function addProject(bmprFile:BMPRFile):void
+		{
+			var conn:SQLConnection = new SQLConnection(); 
+			
+			conn.addEventListener(SQLEvent.OPEN, openHandler); 
+			conn.addEventListener(SQLErrorEvent.ERROR, errorHandler); 
+			
+			conn.openAsync(bmprFile.file, SQLMode.READ); 
+			
+			
+			
+			function openHandler(event:SQLEvent):void 
+			{ 
+				var selectStmt:SQLStatement = new SQLStatement(); 
+				selectStmt.sqlConnection = conn; 
+				selectStmt.text = "SELECT * FROM RESOURCES"; 
+				
+				selectStmt.addEventListener(SQLEvent.RESULT, resultHandler); 
+				selectStmt.addEventListener(SQLErrorEvent.ERROR, errorHandler); 
+				
+				selectStmt.execute(); 
+				
+				function mockupJSONToXML(obj:Object):XML
+				{
+					var qName:QName = new QName("mockup");
+					var xmlDocument:XMLDocument = new XMLDocument();
+					var simpleXMLEncoder:SimpleXMLEncoder = new SimpleXMLEncoder(xmlDocument);
+					var xmlNode:XMLNode = simpleXMLEncoder.encodeValue(obj, qName, xmlDocument);
+					var xml:XML = new XML(xmlDocument.toString());
+					return xml;
+				}
+				
+				function resultHandler(event:SQLEvent):void 
+				{ 
+					var result:SQLResult = selectStmt.getResult(); 
+					var tempDir:File = File.createTempDirectory();
+					var numResults:int = result.data.length; 
+					for (var i:int = 0; i < numResults; i++) 
+					{ 
+						var row:Object = result.data[i];
+						var id:String = row.ID;
+						var attrs:Object = JSON.parse(row.ATTRIBUTES);
+						
+						trace(tempDir.nativePath);
+						if (attrs.mimeType == "text/vnd.balsamiq.bmml") {
+							var data:Object = JSON.parse(row.DATA).mockup;
+							
+							var mockupFile:File = tempDir.resolvePath(id + ".bmml");
+							var fs:FileStream = new FileStream();
+							fs.open(mockupFile, FileMode.WRITE);
+							fs.writeUTFBytes(mockupJSONToXML(data));
+							fs.close();
+							var fi:BMMLFile = new BMMLFile();
+							fi.file = new File(mockupFile.nativePath);
+							fi.name = attrs.name;
+							addFile(fi);
+						}
+					} 
+				} 
+			} 
+			
+			function errorHandler(event:SQLErrorEvent):void 
+			{ 
+				trace("Error message:", event.error.message); 
+				trace("Details:", event.error.details); 
+			}
+			
+			
+			
 		}
 		
 		public function addFile(bmmlFile:BMMLFile):void
