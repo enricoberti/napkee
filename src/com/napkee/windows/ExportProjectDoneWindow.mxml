@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="480" height="178" title="Project export" showCloseButton="true">
-
-	<mx:Script>
-		<![CDATA[
-			import mx.events.CloseEvent;
-			
-			[Bindable] public var mockupFileName:String;
-			[Bindable] public var destination:String;
-			
-			private function returnToNapkee():void
-			{
-				this.dispatchEvent(new Event(CloseEvent.CLOSE));	
-			}
-			
-			
-		]]>
-	</mx:Script>
-
-	<mx:Text htmlText="Your project &lt;b&gt;{mockupFileName}&lt;/b&gt; has been successfully exported to&lt;br&gt;&lt;br&gt;&lt;b&gt;{destination}&lt;/b&gt;" width="100%" height="100%">
-	</mx:Text>
-	<mx:ControlBar>
-		<mx:Spacer width="100%" />
-		<mx:Button label="OK" click="returnToNapkee()"/>
-	</mx:ControlBar>
-	
+  
+  <mx:Script>
+    <![CDATA[
+      import mx.events.CloseEvent;
+      
+      [Bindable] public var mockupFileName:String;
+      [Bindable] public var destination:String;
+      
+      private function returnToNapkee():void
+      {
+        this.dispatchEvent(new Event(CloseEvent.CLOSE));	
+      }
+      
+      
+    ]]>
+  </mx:Script>
+  
+  <mx:Text htmlText="Your project &lt;b&gt;{mockupFileName}&lt;/b&gt; has been successfully exported to&lt;br&gt;&lt;br&gt;&lt;b&gt;{destination}&lt;/b&gt;" width="100%" height="100%">
+  </mx:Text>
+  <mx:ControlBar>
+    <mx:Spacer width="100%" />
+    <mx:Button label="OK" click="returnToNapkee()"/>
+  </mx:ControlBar>
+  
 </mx:TitleWindow>

@@ -4,7 +4,7 @@
 	<filename>Napkee</filename>
 	<name>Napkee</name>
 	<versionNumber>2.1.0</versionNumber>
-  <versionLabel>2.1.0</versionLabel>
+	<versionLabel>2.1.0</versionLabel>
 
 	<description>Make your mockups come alive!</description>
 	<copyright>Apache License, Version 2.0</copyright>
@@ -12,7 +12,7 @@
 
 	<initialWindow>
 		<content>[]</content>
-		
+
 		<title>Napkee</title>
 
 		<systemChrome>standard</systemChrome>
@@ -28,7 +28,7 @@
 		<minSize>780 580</minSize>
 
 	</initialWindow>
-	
+
 	<allowBrowserInvocation>true</allowBrowserInvocation>
 
 	<icon>
